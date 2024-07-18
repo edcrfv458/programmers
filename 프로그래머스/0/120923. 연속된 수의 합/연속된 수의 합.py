@@ -1,26 +1,20 @@
 def solution(num, total):
-    answer = [0 + i for i in range(num)]
-    if num % 2 == 1:
-        mid = total // num
+    answer = [0] * num  # 초기화된 리스트 생성
+    
+    mid = total // num  # 중간 값 계산
+    
+    if num % 2 == 1:  # 홀수인 경우
         answer[num // 2] = mid
-        s = 1
-        t = 1
-        for a in range(num // 2 - 1, -1, -1):
-            answer[a] = mid - s
-            s += 1
-        for a in range(num // 2 + 1, num):
-            answer[a] = mid + t
-            t += 1
-    else:
+        for i in range(1, num // 2 + 1):
+            answer[num // 2 - i] = mid - i
+            answer[num // 2 + i] = mid + i
+    else:  # 짝수인 경우
         mid_left = total // num
         mid_right = total // num + 1
         answer[num // 2 - 1] = mid_left
         answer[num // 2] = mid_right
-        s, t = 1, 1
-        for a in range(num // 2 - 2, -1, -1):
-            answer[a] = mid_left - s
-            s += 1
-        for a in range(num // 2 + 1, num):
-            answer[a] = mid_right + t
-            t += 1
+        for i in range(1, num // 2):
+            answer[num // 2 - 1 - i] = mid_left - i
+            answer[num // 2 + i] = mid_right + i
+    
     return answer
