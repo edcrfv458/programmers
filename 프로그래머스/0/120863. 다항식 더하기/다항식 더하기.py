@@ -15,21 +15,20 @@ def solution(polynomial):
             
     int_result = sum(int(i) for i in int_data)
     
-    result = []
-    if x_result > 0:
-        if x_result == 1:
-            result.append("x")
-        else:
-            result.append(f"{x_result}x")
-    if int_result > 0:
-        result.append(str(int_result))
+    ## x 계수가 0, 정수 계수가 0이 아님
+    ## x 계수가 1, 정수 계수가 0임
+    ## x 계수가 1, 정수 계수가 0이 아님
+    ## x 계수가 2이상, 정수 계수가 0임
+    ## x 계수가 2이상, 정수 계수가 0이 아님
     
-    return ' + '.join(result)
-    # if x_result == 0 and int_result != 0:
-    #     return f"{int_result}"
-    # elif x_result != 0 and int_result == 0:
-    #     return f"{x_result}x"
-    # elif x_result != 0 and int_result != 0:
-    #     return f"{x_result}x + {int_result}"
-    # else:
-    #     return f"0"
+    if x_result == 0 and int_result != 0:
+        return f"{int_result}"
+    elif x_result > 0:
+        if x_result == 1 and int_result == 0:
+            return f"x"
+        elif x_result == 1 and int_result != 0:
+            return f"x + {int_result}"
+        elif x_result > 1 and int_result == 0:
+            return f"{x_result}x"
+        elif x_result > 1 and int_result != 0:
+            return f"{x_result}x + {int_result}"
