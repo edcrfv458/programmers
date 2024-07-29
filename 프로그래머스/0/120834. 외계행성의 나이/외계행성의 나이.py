@@ -1,7 +1,7 @@
 def solution(age):
     str_age = str(age)
-    answer = ""
-    data = {
+    result = ""
+    dict = {
         '0':'a',
         '1':'b',
         '2':'c',
@@ -13,6 +13,6 @@ def solution(age):
         '8':'i',
         '9':'j'
     }
-    for s in str_age:
-        answer += data[s]
-    return answer
+    for i in str_age:
+        result += dict[i]
+    return result
