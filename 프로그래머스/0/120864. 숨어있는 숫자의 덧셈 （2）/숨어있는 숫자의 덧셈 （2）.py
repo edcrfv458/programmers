@@ -1,5 +1,3 @@
-import re
-
 def solution(my_string):
-    my_string = re.sub('[^0-9]', ' ', my_string).split(' ')
-    return sum([int(i) for i in my_string if i])
+    s = ''.join(i if i.isdigit() else ' ' for i in my_string)
+    return sum(int(i) for i in s.split())
