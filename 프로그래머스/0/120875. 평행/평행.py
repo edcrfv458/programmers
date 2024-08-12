@@ -1,27 +1,24 @@
 def solution(dots):
-    a1, b1 = dots[0]
-    a2, b2 = dots[1]
-    a3, b3 = dots[2]
-    a4, b4 = dots[3]
+    a,b = dots[0]
+    c,d = dots[1]
+    e,f = dots[2]
+    g,h = dots[3]
     
-    def is_parallel(x1, y1, x2, y2, x3, y3, x4, y4):
-        ca1, cb1 = x2 - x1, y2 - y1
-        ca2, cb2 = x4 - x3, y4 - y3
-        if cb1 * ca2 == cb2 * ca1:
-            return True
-        return False
+    def inclination(x1,y1,x2,y2,x3,y3,x4,y4):
+        l_u, l_d, r_u, r_d = x2-x1, y2-y1, x4-x3, y4-y3
+        if abs(l_u * r_d) == abs(l_d * r_u):
+            return 1
     
-    # 각 경우에 대해 평행 여부를 확인
-    # case 1: (1,2) - (3,4)
-    if is_parallel(a1, b1, a2, b2, a3, b3, a4, b4):
-        return 1
-
-    # case 2: (1,3) - (2,4)
-    if is_parallel(a1, b1, a3, b3, a2, b2, a4, b4):
+    # 1: (a,b),(c,d) 기울기 & (e,f),(g,h) 기울기 비교
+    if inclination(a,b,c,d,e,f,g,h) == 1:
         return 1
     
-    # case 3: (1,4) - (2,3)
-    if is_parallel(a1, b1, a4, b4, a2, b2, a3, b3):
+    # 2: (a,b),(e,f) 기울기 & (c,d),(g,h) 기울기 비교
+    if inclination(a,b,e,f,c,d,g,h) == 1:
+        return 1
+    
+    # 3: (a,b),(g,h) 기울기 & (e,f),(c,d) 기울기 비교
+    if inclination(a,b,g,h,c,d,e,f) == 1:
         return 1
     
     return 0
