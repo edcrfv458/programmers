@@ -1,9 +1,9 @@
 def solution(sides):
-    a, b = sides
     count = 0
-    for i in range(1, a+b):
-        if i < max(a, b) and i + min(a, b) > max(a, b):
-            count += 1
-        elif i >= max(a, b) and a + b > i:
+    for i in range(1, sum(sides)):
+        if i < max(sides):
+            if i + min(sides) > max(sides):
+                count += 1
+        else:
             count += 1
     return count
