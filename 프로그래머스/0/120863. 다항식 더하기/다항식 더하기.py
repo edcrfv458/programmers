@@ -1,34 +1,31 @@
 def solution(polynomial):
-    answer = polynomial.replace(' ','').split('+')
-    
-    x_data = [i for i in answer if "x" in i]
-    int_data = [i for i in answer if "x" not in i]
-    
+    data = polynomial.split(' + ')
     x_result = 0
     int_result = 0
-    
-    for i in x_data:
-        if i == 'x':
-            x_result += 1
+    for i in data:
+        if 'x' in i:
+            if len(i) == 1:
+                x_result += 1
+            else:
+                x_result += int(i.replace('x', ''))
         else:
-            x_result += int(i.replace('x',''))
-            
-    int_result = sum(int(i) for i in int_data)
+            int_result += int(i)
     
-    ## x 계수가 0, 정수 계수가 0이 아님
-    ## x 계수가 1, 정수 계수가 0임
-    ## x 계수가 1, 정수 계수가 0이 아님
-    ## x 계수가 2이상, 정수 계수가 0임
-    ## x 계수가 2이상, 정수 계수가 0이 아님
+    if int_result > 0 and x_result > 1:
+        return f"{x_result}x + {int_result}"
     
-    if x_result == 0 and int_result != 0:
+    # x가 1일 경우에는 1x 가 아닌 x 가 출력되야 함
+    elif int_result > 0 and x_result == 1:
+        return f"x + {int_result}"
+    
+    elif int_result > 0 and x_result == 0:
         return f"{int_result}"
-    elif x_result > 0:
-        if x_result == 1 and int_result == 0:
-            return f"x"
-        elif x_result == 1 and int_result != 0:
-            return f"x + {int_result}"
-        elif x_result > 1 and int_result == 0:
-            return f"{x_result}x"
-        elif x_result > 1 and int_result != 0:
-            return f"{x_result}x + {int_result}"
+
+    elif int_result == 0 and x_result > 1:
+        return f"{x_result}x"
+    
+    elif int_result == 0 and x_result == 1:
+        return f"x"
+    
+    elif int_result == 0 and x_result == 0:
+        return f"0"
