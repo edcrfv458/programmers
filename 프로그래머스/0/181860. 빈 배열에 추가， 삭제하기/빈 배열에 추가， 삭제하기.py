@@ -1,9 +1,10 @@
 def solution(arr, flag):
     X = []
     for i, f in enumerate(flag):
+        data = arr[i]
         if f == True:
-            X += [arr[i]] * (arr[i]*2)
+            X.extend([data] * (data*2))
         else:
-            for _ in range(arr[i]):
+            for d in range(data):
                 X.pop()
     return X
