@@ -1,8 +1,8 @@
 def solution(arr):
     i = 1
-    while len(arr) > i:
+    while i < len(arr):
         i *= 2
-        print (i)
-    d = i - len(arr)
-    arr += [0] * d
+    if len(arr) != i:
+        for j in range(i - len(arr)):
+            arr.append(0)
     return arr
