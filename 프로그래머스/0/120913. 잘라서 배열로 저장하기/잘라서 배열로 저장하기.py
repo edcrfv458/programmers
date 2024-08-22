@@ -1,8 +1,7 @@
 def solution(my_str, n):
-    answer = []
-    start, end = 0, n
-    while end < len(my_str)+n:
-        answer.append(my_str[start:end])
-        start = end
-        end += n
-    return answer
+    i = 0
+    data = []
+    while i < len(my_str):
+        data.append(my_str[i:i+n])
+        i += n
+    return data
