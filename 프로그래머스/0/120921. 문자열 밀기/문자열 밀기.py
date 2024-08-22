@@ -1,11 +1,12 @@
 def solution(A, B):
+    count = 0
     if A == B:
-        return 0
-    i = 1
-    while i <= len(B):
-        new_a = A[-1] + A[:len(B)-1]
-        if new_a == B:
-            return i
-        i += 1
-        A = new_a
+        return count
+    while count < len(A):
+        count += 1
+        data = A[-1] + A[:len(A)-1]
+        if data == B:
+            return count
+        else:
+            A = data
     return -1
