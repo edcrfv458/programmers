@@ -1,9 +1,13 @@
 def solution(arr):
-    i, j = len(arr), len(arr[0])
-    if i < j:
-        for _ in range(j - i):
-            arr.append([0] * j) 
-    elif i > j:
-        for k in range(i):
-            arr[k] += [0] * (i - j)
-    return arr
+    x, y = len(arr), len(arr[0])
+    if x == y:
+        return arr
+    elif x < y:
+        for i in range(y - x):
+            arr.append([0] * y)
+        return arr
+    else:
+        for line in arr:
+            for i in range(x - y):
+                line.append(0)
+        return arr
