@@ -1,7 +1,7 @@
 def solution(score):
-    s = [a+b for a,b in score]
-    ss = sorted(s, reverse=True)
-    rank = []
-    for i in s:
-        rank.append(ss.index(i) + 1)
-    return rank
+    result = []
+    data = [s+e for s,e in score]
+    sorted_data = sorted(data, reverse=True)
+    for i in data:
+        result.append(sorted_data.index(i)+1)
+    return result
