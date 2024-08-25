@@ -1,2 +1,3 @@
 def solution(s):
-    return int(s[0:])
+    # int로 형변환
+    return int(s)
