@@ -16,7 +16,5 @@ def solution(participant, completion):
     for p in dict1.keys():
         if p not in dict2:
             return p
-        
-    for p in dict1.keys():
         if dict1[p] != dict2[p]:
             return p
