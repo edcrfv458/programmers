@@ -1,8 +1,6 @@
 def solution(cards1, cards2, goal):
     i, j, k = 0, 0, 0
     while k < len(goal):
-        if i >= len(cards1) and j >= len(cards2):
-            return 'No'
         if i < len(cards1) and cards1[i] == goal[k]:
             i += 1
             k += 1
