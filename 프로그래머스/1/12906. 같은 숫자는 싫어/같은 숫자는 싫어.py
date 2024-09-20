@@ -1,8 +1,6 @@
 def solution(arr):
-    # 비교를 위해 초깃값 넣음
-    answer = [arr[0]]
-    # 1부터 마지막요소까지 접근
-    for a in arr:
-        if answer[-1] != a:
-            answer.append(a)
-    return answer
+    data = [arr[0]]     # 비교를 위해 첫 요소를 담음
+    for i in range(1, len(arr)):
+        if arr[i] != data[-1]:
+            data.append(arr[i])
+    return data
