@@ -1,5 +1,5 @@
 def solution(babbling):
-    count = 0   # 발음 가능한 단어의 수를 저장
+    count = 0
     for b in babbling:
         if 'aya' * 2 not in b:
             b = b.replace('aya', ' ')
