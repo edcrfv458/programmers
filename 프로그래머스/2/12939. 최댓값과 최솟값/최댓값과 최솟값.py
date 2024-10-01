@@ -1,4 +1,4 @@
 def solution(s):
     data = s.split(' ')
-    data = [int(i) for i in data]
-    return (str(min(data))+' '+str(max(data)))
+    int_data = [int(i) for i in data]
+    return str(min(int_data)) + " " + str(max(int_data))
