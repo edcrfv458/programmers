@@ -7,5 +7,4 @@ def solution(s):
             a.pop()
         else:
             a.append(i)
-    
-    return 1 if not a else 0
+    return 1 if not a else 0 
