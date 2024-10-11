@@ -1,6 +1,8 @@
 def solution(numbers, n):
-    sum = 0
-    for i in numbers:
-        sum += i
-        if sum > n:
-            return sum
+    s, i = 0, 0
+    while i < len(numbers):
+        s += numbers[i]
+        if s > n:
+            return s
+        else:
+            i += 1
