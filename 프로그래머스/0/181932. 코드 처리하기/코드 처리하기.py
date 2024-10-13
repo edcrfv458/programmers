@@ -1,18 +1,17 @@
 def solution(code):
     mode = 0
     ret = ""
-    for i in range(len(code)):
+    for idx in range(len(code)):
         if mode == 0:
-            if code[i] != "1" and i % 2 == 0:
-                ret += code[i]
-            elif code[i] == "1":
+            if code[idx] == '1':
                 mode = 1
+            else:
+                if idx % 2 == 0:
+                    ret += code[idx]
         else:
-            if code[i] != "1" and i % 2 == 1:
-                ret += code[i]
-            elif code[i] == "1":
+            if code[idx] == '1':
                 mode = 0
-    if not ret:
-        ret = "EMPTY"
-                    
-    return ret
+            else:
+                if idx % 2 == 1:
+                    ret += code[idx]
+    return ret if ret else "EMPTY"
