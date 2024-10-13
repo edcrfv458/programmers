@@ -1,8 +1,8 @@
 text = input()
-answer = ""
-for i in text:
-    if i.islower() == True:
-        answer += i.upper()
+answer = []
+for t in text:
+    if t.isupper():
+        answer.append(t.lower())
     else:
-        answer += i.lower()
-print (answer)
+        answer.append(t.upper())
+print (''.join(answer))
