@@ -1,4 +1,4 @@
 def solution(myString, pat):
-    rm = myString[::-1]
-    rp = pat[::-1]
-    return myString[:len(myString) - rm.index(rp)]
+    m = myString[::-1]
+    p = pat[::-1]
+    return myString[:len(myString) - m.index(p)]
