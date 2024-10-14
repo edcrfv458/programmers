@@ -1,3 +1,3 @@
 def solution(myStr):
-    data =  myStr.replace('a', ' ').replace('b', ' ').replace('c', ' ').split()
-    return ["EMPTY"] if len(data) == 0 else data
+    myStr = myStr.replace('a', ' ').replace('b', ' ').replace('c', ' ')
+    return myStr.split() if myStr.split() else ["EMPTY"]
