@@ -1,7 +1,6 @@
 def solution(l, r):
-    answer = []
+    data = []
     for i in range(l, r+1):
-        stri = str(i).replace('5','').replace('0','')
-        if len(stri) == 0:
-            answer.append(i)
-    return answer if len(answer) else [-1]
+        if not str(i).replace('5', '').replace('0', ''):
+            data.append(i)
+    return sorted(data) if data else [-1]
