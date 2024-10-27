@@ -1,6 +1,7 @@
 def solution(l, r):
-    result = []
+    data = []
     for i in range(l, r+1):
-        if not str(i).replace('5', '').replace('0', ''):
-            result.append(i)
-    return result if result else [-1]
+        i = str(i)
+        if not i.replace('5', '').replace('0',''):
+            data.append(int(i))
+    return data if data else [-1]
