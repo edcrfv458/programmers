@@ -1,5 +1,5 @@
 def solution(score):
-    result = []
+    result = []     # 등수 담을 배열
     data = [s+e for s,e in score]
     sorted_data = sorted(data, reverse=True)
     for i in data:
