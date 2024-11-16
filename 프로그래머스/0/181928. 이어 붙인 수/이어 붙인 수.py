@@ -1,6 +1,6 @@
 def solution(num_list):
-    odd = ''
     even = ''
+    odd = ''
     for num in num_list:
         if num % 2 == 0:
             even += str(num)
