@@ -1,11 +1,5 @@
 def solution(food):
-    answer = []
-    for i, f in enumerate(food):
-        if i == 0:
-            pass
-        for j in range(f // 2):
-            answer.append(i)
-    reverse_answer = answer[::-1]
-    answer.append(0)
-    answer.extend(reverse_answer)
-    return ''.join(map(str, answer))
+    answer = ""
+    for i, d in enumerate(food):
+        answer += str(i) * (d // 2)
+    return answer + "0" + answer[::-1]
