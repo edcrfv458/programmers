@@ -1,8 +1,8 @@
 def solution(myString):
-    answer = []
-    for i in myString:
-        if i == 'a' or i == 'A':
-            answer.append("A")
+    answer = ""
+    for m in myString:
+        if m == 'a' or m == 'A':
+            answer += 'A'
         else:
-            answer.append(i.lower())
-    return ''.join(answer)
+            answer += m.lower()
+    return answer
