@@ -1,3 +1,4 @@
-a, b = map(int, input().strip().split(' '))
-answer = ('*' * a + '\n')
-print (answer * b)
+text = str(input())
+a, b = text.split(' ')
+for i in range(int(b)):
+    print("*" * int(a))
