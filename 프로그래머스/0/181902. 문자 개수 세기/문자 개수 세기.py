@@ -3,8 +3,7 @@ def solution(my_string):
     for i in my_string:
         if 'A' <= i <= 'Z':
             number = ord(i) - ord('A')
-            count[number] += 1
-        elif 'a' <= i <= 'z':
+        else:
             number = ord(i) - ord('a') + 26
-            count[number] += 1    
-    return count                                                                                                                                                                                                                                                                           
+        count[number] += 1
+    return count
