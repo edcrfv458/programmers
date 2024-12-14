@@ -2,15 +2,15 @@ def solution(keymap, targets):
     answer = []
     for target in targets:
         count = 0
-        for i in target:
-            c = 200
-            for j in keymap:
-                if i in j:
-                    c = min(j.index(i) + 1, c)
-            if c == 200:
+        for t in target:
+            a = 101
+            for key in keymap:
+                if t in key:
+                    a = min(a, key.index(t)+1)
+            if a != 101:
+                count += a
+            elif a == 101:
                 count = -1
                 break
-            else:
-                count += c
         answer.append(count)
     return answer
