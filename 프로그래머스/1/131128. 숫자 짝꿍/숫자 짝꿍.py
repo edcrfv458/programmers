@@ -1,15 +1,20 @@
 def solution(X, Y):
-    x, y = [], []
+    x = []
+    y = []
+    result = []
     for i in X:
         x.append(i)
     for i in Y:
         y.append(i)
-    xy_set = set(x) & set(y)
-    if not xy_set:
+    x_set = set(x)
+    y_set = set(y)
+    xy = x_set & y_set
+    if not xy:
         return "-1"
-    data = []
-    for i in xy_set:
-        data += i * min(x.count(i), y.count(i))
-    sorted_data = sorted(data, reverse=True)
-    return "0" if sorted_data[0] == "0" else ''.join(sorted_data) 
-    
+    if len(xy) == 1 and "0" in xy:
+        return "0"
+    for i in xy:
+        c = min(x.count(i), y.count(i))
+        for _ in range(c):
+            result.append(int(i))
+    return ''.join(sorted(map(str, result), reverse=True))
