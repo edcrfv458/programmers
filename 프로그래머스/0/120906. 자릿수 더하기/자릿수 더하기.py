@@ -1,2 +1,5 @@
 def solution(n):
-    return sum(int(i) for i in str(n))
+    sum = 0
+    for i in str(n):
+        sum += int(i)
+    return sum
