@@ -1,3 +1,2 @@
 def solution(x, n):
-    # 등차수열
-    return [(i+1)*x for i in range(n)]
+    return list(x*i for i in range(1, n+1))
