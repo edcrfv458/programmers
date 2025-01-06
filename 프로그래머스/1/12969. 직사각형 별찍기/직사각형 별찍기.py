@@ -1,4 +1,5 @@
-text = str(input())
-a, b = text.split(' ')
-for i in range(int(b)):
-    print("*" * int(a))
+text = input()
+a, b = text.split()
+a, b = int(a), int(b)
+for i in range(b):
+    print('*' * a)
