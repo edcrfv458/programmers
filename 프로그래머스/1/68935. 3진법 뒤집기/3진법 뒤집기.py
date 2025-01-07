@@ -1,14 +1,15 @@
 def solution(n):
     data = []
+    
     while n > 0:
-        data.append(n % 3)
-        n //= 3
+        data.append(n % 3)  
+        n = n // 3
     
-    answer = 0  # 3진법을 10진법으로 변환한 수 저장
-    upper = 0   # 지수
+    result = 0
+    a = len(data) - 1
     
-    for i in data[::-1]:
-        answer += i * (3**upper)
-        upper += 1
+    for i in data:
+        result += i * (3 ** a)
+        a -= 1
     
-    return answer
+    return result
