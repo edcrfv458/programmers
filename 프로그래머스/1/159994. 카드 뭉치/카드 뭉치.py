@@ -9,4 +9,4 @@ def solution(cards1, cards2, goal):
             k += 1
         else:
             return "No"
-    return "Yes" if i + j == k else "No"
+    return "Yes"
