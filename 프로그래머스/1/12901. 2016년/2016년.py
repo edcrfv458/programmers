@@ -1,6 +1,6 @@
 import datetime
 
 def solution(a, b):
-    weekdays = ['MON','TUE','WED','THU','FRI','SAT','SUN']
-    dt = weekdays[datetime.date(2016,a,b).weekday()]
-    return dt
+    wek = ["MON", 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
+    day = datetime.date(2016, a, b).weekday()
+    return wek[day]
