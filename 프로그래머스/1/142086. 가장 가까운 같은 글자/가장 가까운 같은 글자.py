@@ -1,13 +1,10 @@
 def solution(s):
     result = []
-    number = []
-    for i, c in enumerate(s):
-        if c not in number:
+    d = {}
+    for i in range(len(s)):
+        if s[i] not in d:
             result.append(-1)
-            number.append(c)
         else:
-            a = number.index(c)
-            result.append(i - a)
-            number[a] = 0
-            number.append(c)
+            result.append(i - d[s[i]])
+        d[s[i]] = i
     return result
