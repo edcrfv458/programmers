@@ -1,13 +1,12 @@
 def solution(n, m, section):
+    # n: 칠할 구역의 수, m: 룰러의 길이, section: 칠해야 할 곳
+    # 시작이 1
+    
     count = 0
-    paint = [True] * n
+    position = 0
     
     for i in section:
-        paint[i-1] = False
-        
-    for i in section:
-        if paint[i-1] == False:
-            for j in range(i-1, min(i-1+m, n)):
-                paint[j] = True
+        if position < i:
+            position = m + i - 1
             count += 1
     return count
