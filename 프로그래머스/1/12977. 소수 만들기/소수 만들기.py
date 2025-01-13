@@ -1,14 +1,11 @@
 def solution(nums):
+    n = len(nums)
     answer = 0
-    l = len(nums)
-    for i in range(l-2):
-        for j in range(i+1, l-1):
-            for k in range(j+1, l):
-                s = nums[i] + nums[j] + nums[k]
-                s_sosu = []
-                for h in range(2, int(s**0.5)+1):
-                    if s % h == 0:
-                        s_sosu.append(h)
-                if not s_sosu:
+    for i in range(n-2):
+        for j in range(i+1, n-1):
+            for k in range(j+1, n):
+                num = nums[i] + nums[j] + nums[k]
+                data = [i for i in range(2, int(num**0.5) + 1) if num%i == 0]
+                if not data:
                     answer += 1
     return answer
