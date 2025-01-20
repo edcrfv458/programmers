@@ -1,11 +1,11 @@
 def solution(ingredient):
-    # 1:빵, 2:야채, 3: 고기
-    h = []
-    count = 0
+    # 1:빵, 2:야채, 3:고기
+    result = 0
+    answer= []
     for i in ingredient:
-        h.append(i)
-        if h[-4:] == [1, 2, 3, 1]:
+        answer.append(i)
+        if answer[-4:] == [1, 2, 3, 1]:
             for _ in range(4):
-                h.pop()
-            count += 1
-    return count
+                answer.pop()
+            result += 1
+    return result
