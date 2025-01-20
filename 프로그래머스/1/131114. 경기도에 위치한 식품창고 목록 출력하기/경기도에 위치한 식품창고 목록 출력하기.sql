@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+SELECT WAREHOUSE_ID,
+       WAREHOUSE_NAME,
+       ADDRESS,
+       case when FREEZER_YN IS NULL then "N"
+       else FREEZER_YN end "FREEZER_YN"
+FROM FOOD_WAREHOUSE
+WHERE ADDRESS like '%경기%'
+ORDER BY WAREHOUSE_ID
