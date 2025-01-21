@@ -1,0 +1,5 @@
+-- 코드를 입력하세요
+SELECT a.PRODUCT_CODE, sum(a.PRICE * b.sales_amount) price
+FROM PRODUCT a INNER JOIN OFFLINE_SALE b on a.PRODUCT_ID = b.PRODUCT_ID
+GROUP BY 1
+ORDER BY 2 desc, 1
