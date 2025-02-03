@@ -1,0 +1,17 @@
+SELECT date_format(sales_date, '%Y-%m-%d') SALES_DATE,
+       PRODUCT_ID,
+       USER_ID,
+       SALES_AMOUNT
+FROM ONLINE_SALE
+WHERE MONTH(SALES_DATE) = 3
+
+UNION
+
+SELECT date_format(sales_date, '%Y-%m-%d') SALES_DATE,
+       PRODUCT_ID,
+       NULL USER_ID,
+       SALES_AMOUNT
+FROM OFFLINE_SALE
+WHERE MONTH(SALES_DATE) = 3
+
+ORDER BY SALES_DATE, PRODUCT_ID, USER_ID
