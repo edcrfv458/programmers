@@ -3,6 +3,7 @@ def solution(lines):
     for s, e in lines:
         for i in range(s, e):
             line.append((i, i+1))
+    print(line)
     count = 0
     for l in set(line):
         if line.count(l) > 1:
