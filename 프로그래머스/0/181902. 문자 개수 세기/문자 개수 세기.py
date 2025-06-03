@@ -1,9 +1,9 @@
-def solution(my_string):
-    count = [0] * 52
-    for i in my_string:
-        if 'A' <= i <= 'Z':
-            number = ord(i) - ord('A')
+def solution(string):
+    result = [0] * 52
+    for c in string:
+        if c >= 'A' and c <= 'Z':
+            pos = ord(c) - ord('A')
         else:
-            number = ord(i) - ord('a') + 26
-        count[number] += 1
-    return count
+            pos = ord(c) - ord('a') + 26
+        result[pos] += 1
+    return result
