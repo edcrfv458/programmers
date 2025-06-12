@@ -1,11 +1,9 @@
 def solution(a, b, n):
     result = 0
-    while True:
-        cola = n // a
+    
+    while n >= a:
+        cola = n // a * b
+        n = cola + n % a
         
-        if cola == 0:
-            return result
-        
-        result += b * cola
-        n = n % a + b * cola
-        
+        result += cola
+    return result
